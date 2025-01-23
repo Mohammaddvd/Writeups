@@ -45,3 +45,7 @@ the printf stub.
 
 
 Finally we would call the shellcode!
+
+![photo_2025-01-23_09-25-02](https://github.com/user-attachments/assets/e69ee563-b1c3-4a18-ab42-9b774bf66cce)
+
+
