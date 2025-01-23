@@ -6,7 +6,7 @@ use-after-free vulnerability (i  had wrote  this  program  which it has
 the vuln). Our approach is much simpler than you might expect, we  have
 a menu which  we  have to choose 4 options:
 
-====
+```
 ![we have a global struct called `usr` which has  two  string  pointer]
 ![this struct store in heap]
 
@@ -14,7 +14,7 @@ a menu which  we  have to choose 4 options:
 2- change password       // [using fgets to store data in usr->username]
 3- delete user           // [just free the `usr`]
 4- leave a message       // [allocate new chunk in heap  with  our data]
-===
+```
 
 if you check the binary you would see that after free ing the`usr` chunk
 , the binary is not going to set the variable to NULL, it cause  UAF  or
