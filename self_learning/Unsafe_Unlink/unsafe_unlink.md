@@ -33,6 +33,9 @@ bk = P->bk
 P->fd = bk
 P->bk = fd
 
+![Untitled](https://github.com/user-attachments/assets/8d8be48d-b5da-402c-8c50-f32a3689e2f2)
+
+
 for better understanding, check the libc source code, malloc.c file:
 _int_free() -> _int_free_merge_chunk() -> unlink_chunk()
 
