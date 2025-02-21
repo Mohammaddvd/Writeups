@@ -21,6 +21,8 @@ Lines 23–25 allocate three new chunks in the heap.
 
 ### Triggering Double-Free
 Lines 27–31 show how we trigger a double-free by freeing the same chunk twice (the chunk referred to by a).
+![double_free](https://github.com/user-attachments/assets/5e8f1a28-f4d9-4b93-b634-4bcdeab37728)
+
 
 ### Popping Chunks from the Fastbin
 In line 33, we call calloc() to pop the previously freed a chunk from the fastbin. Similarly, in line 35, we do the same with chunk b.
@@ -35,6 +37,7 @@ In line 44, we set the fd pointer. This step is crucial and requires knowing the
 ```
 ### Corrupting the Fastbin
 In line 48, we pop the last a chunk from the bin. At this point, the fastbin is corrupted. Then, in line 50, when we call calloc(), it returns a pointer to the stack.
+![cur](https://github.com/user-attachments/assets/7c0111f2-da71-43cc-a72b-e3c5ce207728)
 
 ---
 ## challange time
@@ -62,3 +65,4 @@ All the necessary elements for crafting the exploit are in place. Check out `exp
 - Final step: Send the crafted payload.
 
 If everything goes well, you’ll get a shell. Good luck!
+![rce](https://github.com/user-attachments/assets/2bbf21a5-b090-488d-8a04-673e8b2ee517)
