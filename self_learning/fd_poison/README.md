@@ -38,6 +38,7 @@ We first allocate **three chunks** on the heap. The third chunk is added only to
 
 In **lines 65–66**, we free the first two chunks.
 
+
 By **line 76**, we leak the addresses of the first two chunks using a UAF vulnerability and compute the address of the second chunk.
 
 We then **poison the `fd` pointer** of the second chunk so that the next time `malloc()` is called, it returns an **arbitrary address** of our choice. Our target address is **32 bytes past the first chunk**, which is where a **function pointer** resides. We plan to overwrite this function pointer with the address of the `win()` function.
@@ -50,3 +51,7 @@ Then, we call `malloc()` twice. On the **second call**, `malloc()` should return
 In **line 82**, we write the address of the `win()` function to that location. This works because the first 8 bytes of the target structure are treated as the `age` field (but actually represent the function pointer).
 
 Finally, by selecting **menu option 2**, we trigger the execution of the overwritten function pointer inside the previously freed chunk—now pointing to `win()`. This results in **shell execution**.
+![Capture](https://github.com/user-attachments/assets/29ce7a5f-56b7-483c-907b-c617aacbaecc)
+
+### Ref & challenge:
+https://github.com/SecurityInnovation/glibc_heap_exploitation_training/tree/master/modules/fd_poison/challenge1
