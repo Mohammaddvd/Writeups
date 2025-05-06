@@ -45,6 +45,8 @@ We then **poison the `fd` pointer** of the second chunk so that the next time `m
 
 In **line 77**, we compute the desired fake `fd` value.  
 In **line 78**, we use the "edit" functionality to overwrite the second chunk’s `fd` field with our fake address.
+![ch](https://github.com/user-attachments/assets/acdad517-ad98-4bc6-ad19-a9368908d352)
+
 
 Then, we call `malloc()` twice. On the **second call**, `malloc()` should return the **fake address** we injected—**not** the original first chunk's address.
 
