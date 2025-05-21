@@ -1,7 +1,8 @@
 ## Notes
 the target binary compiled with old libc and this technique is not working in newer versions since a check
 added to verify the double-linked list:
-[pic]
+![Capture](https://github.com/user-attachments/assets/dc3329e7-3346-445a-806f-9e6554d5228b)
+
 
 we have three chunks, the program tries to free the 2nd and 3rd chunks, we can write on 1st and 2nd chunks.
 strategy is the first chunk is a place to hold our shellcode, we manipulate the fd&bk fields of second chunk,
