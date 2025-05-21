@@ -1,7 +1,7 @@
 ## Notes
 the target binary compiled with old libc and this technique is not working in newer versions since a check
 added to verify the double-linked list:
-[pic]
+![Capture](https://github.com/user-attachments/assets/dc3329e7-3346-445a-806f-9e6554d5228b)
 
 like last challenge "easy_1" we have the same code except the free part, we are just freeing the last chunk.
 also if you look at the second call of "fgets", we have a heap-overflow which it can overwrite the header
