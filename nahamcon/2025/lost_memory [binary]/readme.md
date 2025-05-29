@@ -1,5 +1,5 @@
 ## Strategy
-- libc.so.6 the libc version 2.32 (no safe_linking)
+- libc.so.6 the libc version 2.31 (no safe_linking)
 - ld-linux-x86-64.so.2  (linker)
 - lost_memory (main bin)
 
