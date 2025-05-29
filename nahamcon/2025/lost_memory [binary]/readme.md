@@ -18,3 +18,5 @@ Since safe_linking is not present, we can leverage the fd-poison technique to ma
 Additionally, because PIE is disabled, we have predictable addresses, allowing us to corrupt the global ptr list for arbitrary read and write.
 
 Using this arbitrary read primitive, we can leak the address of the actual printf function. With some calculations, we determine the address of system. Finally, we overwrite the free@got entry with the address of system, and trigger execution.
+
+![Capture](https://github.com/user-attachments/assets/03a88ed7-7241-472f-ac96-50e95833bee3)
