@@ -13,3 +13,4 @@ requested size:
 	#second - 0x10: To account for the metadata prior to the __malloc_hook
 
 ```
+<img width="501" height="369" alt="force" src="https://github.com/user-attachments/assets/1f0e9f1a-de5b-42e2-b7b4-7f9167f2ce86" />
